@@ -44,44 +44,44 @@ describe('Express', function() {
     });
 
     it('POST request to /messages returns error object if message formatted incorrectly', function(done) {
-     request(app)
-      .post('/messages')
-      .send({message: 'test'})
-      .end(function(err, res) {
-        var body = JSON.parse(res.text);
-        expect(body).to.have.property('error');
-        expect(body.error).to.eql('Your POST request was unsuccessful');
-        done();
-      });
+      request(app)
+        .post('/messages')
+        .send({message: 'test'})
+        .end(function(err, res) {
+          var body = JSON.parse(res.text);
+          expect(body).to.have.property('error');
+          expect(body.error).to.eql('Your POST request was unsuccessful');
+          done();
+        });
     });
   });
 
   describe('Authorization',function() {
     it('Unauthorized users should be sent denied object', function() {
       request(app)
-       .post('/messages')
-       .send({message: 'test', created_by: 'tester'})
-       .set('Authorization', 'Basic incorrect_key')
-       .end(function(err, res) {
-         var body = JSON.parse(res.text);
-         expect(body).to.have.property('error');
-         expect(body.error).to.eql('Your password is incorrect');
-         done();
-       });
+        .post('/messages')
+        .send({message: 'test', created_by: 'tester'})
+        .set('Authorization', 'Basic incorrect_key')
+        .end(function(err, res) {
+          var body = JSON.parse(res.text);
+          expect(body).to.have.property('error');
+          expect(body.error).to.eql('Your password is incorrect');
+          done();
+        });
+    });
+
+    it('Unauthorized users should be sent denied object', function() {
+      request(app)
+        .post('/messages')
+        .send({message: 'test', created_by: 'tester'})
+        .set('Authorization', 'secret_key')
+        .end(function(err, res) {
+          var body = JSON.parse(res.text);
+          expect(body).to.have.property('error');
+          expect(body.error).to.eql('Your password is incorrect');
+          done();
+        });
     });
   });
 
-  it('Unauthorized users should be sent denied object', function() {
-        request(app)
-         .post('/messages')
-         .send({message: 'test', created_by: 'tester'})
-         .set('Authorization', 'secret_key')
-         .end(function(err, res) {
-           var body = JSON.parse(res.text);
-           expect(body).to.have.property('error');
-           expect(body.error).to.eql('Your password is incorrect');
-           done();
-         });
-      });
-    });
 });
