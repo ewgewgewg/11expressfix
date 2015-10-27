@@ -1,7 +1,7 @@
 var messages = require('./../../data/messages');
 
 module.exports = {
-  getMessages: function(request, response) {
+  getMessages: function(request,response) {
     // write code here
 
   },

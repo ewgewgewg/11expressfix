@@ -41,6 +41,20 @@ During this challenge we will be inspecting the headers of our request to ensure
 
 ##Getting started
 
+###Setup
+- [ ] Run ```npm install``` to install server-side dependencies
+- [ ] Run ```npm start``` to start your server. Open your browser to the following address:
+````
+http://localhost:3000/
+````
+
+###Testing
+- [ ] Run ```npm test``` in your terminal to test your code
+- [ ] Additionally, open your browser to the following address to view your application:
+````
+http://localhost:3000/
+````
+
 ###Creating routes
 - [ ] Create a route that handles ```GET``` requests to ```/messages```
 - [ ] The route should connect to the ```messageController``` middleware (provide). Modify the getMessages function to respond with the provided array of messages
