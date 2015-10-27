@@ -72,16 +72,15 @@ describe('Express', function() {
   });
 
   it('Unauthorized users should be sent denied object', function() {
-        request(app)
-         .post('/messages')
-         .send({message: 'test', created_by: 'tester'})
-         .set('Authorization', 'secret_key')
-         .end(function(err, res) {
-           var body = JSON.parse(res.text);
-           expect(body).to.have.property('error');
-           expect(body.error).to.eql('Your password is incorrect');
-           done();
-         });
+    request(app)
+     .post('/messages')
+     .send({message: 'test', created_by: 'tester'})
+     .set('Authorization', 'secret_key')
+     .end(function(err, res) {
+        var body = JSON.parse(res.text);
+        expect(body).to.have.property('error');
+        expect(body.error).to.eql('Your password is incorrect');
+        done();
       });
     });
-});
+  });
