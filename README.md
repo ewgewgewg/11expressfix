@@ -19,7 +19,7 @@ Middleware are functions that intercept the client's request, modifies or verifi
 
 Having this modular approach makes it easy to break down the server's responsibilities to specific tasks. One middleware could be responsible for processing cookies. Another could be used to authenticate the user (or otherwise redirect them).
 
-Many popular modules developed as middle. Popular ones include
+Many popular modules are developed as middleware. Popular ones include
 
 - [cookie-parser](https://github.com/expressjs/cookie-parser)
 - [body-parser](https://github.com/expressjs/body-parser)
