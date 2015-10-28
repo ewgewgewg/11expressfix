@@ -1,7 +1,7 @@
 #Express
 
 ##Summary
-In this Skills Builder, you will be working with middleware - the components that form an express application. After we have successfully constructed the messaging portion of our server, we will then create an authorization middleware to check if the client has the proper credentials.
+In this Skills Builder, you will be working with express and middle - the building block for any express app. You will be adding a backend to our messaging application to handle sending and receive results from the client. After we have successfully constructed the messaging portion of our server, we will then create an authorization middleware to check if the client has the proper credentials.
 
 ###Learning Goals
 - [ ] Understand express as a framework around Nodejs
@@ -13,11 +13,11 @@ In this Skills Builder, you will be working with middleware - the components tha
 Express is a framework built on top of the Nodejs platform that enables developers to easily create routes and APIs for their servers. It is one of the most popular frameworks to date (with over 20,000 stars on github), and is used in companies such as Netflix and MySpace. It is centered around middleware - small pieces of code that are built to perform a specific task on the client's request. Being a framework, express only adds structure to Nodejs applications - you can still use native Nodejs code in your express applications.
 
 ##Middleware
-Middleware are functions that intercept the client's code, modifies or verifies it, then passes it on to the next function.
+Middleware are functions that intercept the client's request, modifies or verifies it, then responds the client or passes it the following middleware.
 
 ![inline](http://media.developeriq.in/images/nodeexpress_2_9_2015_1.png)
 
-Because middleware serves a specific. Having this modular approach makes it easy to break down the server's responsibilities to specific tasks. One middleware could be responsible for processing cookies. Another could be used to authenticate the user (or otherwise redirect them).
+Having this modular approach makes it easy to break down the server's responsibilities to specific tasks. One middleware could be responsible for processing cookies. Another could be used to authenticate the user (or otherwise redirect them).
 
 Many popular modules developed as middle. Popular ones include
 
@@ -91,4 +91,5 @@ Authorization: Basic secret_key
 ````
 
 ###Resources and Links
+- [http://expressjs.com/4x/api.html](http://expressjs.com/4x/api.html)
 - [https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystified/](https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystified/)

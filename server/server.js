@@ -7,6 +7,12 @@ var bodyParser = require('body-parser');
 
 app.use(express.static(path.join(__dirname, './../client')));
 
+// place routes here
+
+
+
+
+
 app.listen(3000);
 
 module.exports = app;

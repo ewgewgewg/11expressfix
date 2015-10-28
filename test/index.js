@@ -26,11 +26,57 @@ describe('Express', function() {
         .expect(200,done);
     });
 
-    it('POST request to /messages returns status code of 200 if message formatted correctly', function(done) {
+    it('POST request to /messages returns status code of 200 if message formatted incorrectly', function(done) {
       request(app)
         .post('/messages')
         .send({message: 'test'})
         .expect(200,done);
+    });
+
+    it('Successful POST request adds message', function(done) {
+      var length;
+      request(app)
+        .get('/messages')
+        .end(function(err, res) {
+          length = JSON.parse(res.text).length;
+
+          request(app).post('/messages')
+            .send({message: 'test', created_by: 'tester'})
+            .expect(200)
+            .end(function(err,res) {
+              request(app)
+                .get('/messages')
+                .end(function(err, res) {
+                  var newLength = JSON.parse(res.text).length;
+                  console.log(newLength);
+                  expect(newLength).to.eql(length + 1);
+                  done();
+                });
+          })
+        })
+    });
+
+    it('Unsuccessful POST request do not add message', function(done) {
+      var length;
+      request(app)
+        .get('/messages')
+        .end(function(err, res) {
+          length = JSON.parse(res.text).length;
+
+          request(app).post('/messages')
+            .send({message: 'test'})
+            .expect(200)
+            .end(function(err,res) {
+              request(app)
+                .get('/messages')
+                .end(function(err, res) {
+                  var newLength = JSON.parse(res.text).length;
+                  console.log(newLength);
+                  expect(newLength).to.eql(length);
+                  done();
+                });
+          })
+        })
     });
 
     it('POST request to /messages returns success object if message formatted correctly', function(done) {
