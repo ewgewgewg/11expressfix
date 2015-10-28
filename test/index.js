@@ -83,6 +83,7 @@ describe('Express', function() {
       request(app)
         .post('/messages')
         .send({message: 'test', created_by: 'tester'})
+        .set('Authorization', 'Basic secret_key')
         .end(function(err, res) {
           expect(JSON.parse(res.text)).to.have.property('success');
           done();
@@ -93,6 +94,7 @@ describe('Express', function() {
       request(app)
         .post('/messages')
         .send({message: 'test'})
+        .set('Authorization', 'Basic secret_key')
         .end(function(err, res) {
           var body = JSON.parse(res.text);
           expect(body).to.have.property('error');
@@ -102,8 +104,8 @@ describe('Express', function() {
     });
   });
 
-  describe('Authorization',function() {
-    it('Unauthorized users should be sent denied object', function() {
+  describe('Authorization',function(done) {
+    it('Unauthorized users should be sent denied object', function(done) {
       request(app)
         .post('/messages')
         .send({message: 'test', created_by: 'tester'})
@@ -116,7 +118,7 @@ describe('Express', function() {
         });
     });
 
-    it('Unauthorized users should be sent denied object', function() {
+    it('Unauthorized users should be sent denied object', function(done) {
       request(app)
         .post('/messages')
         .send({message: 'test', created_by: 'tester'})
