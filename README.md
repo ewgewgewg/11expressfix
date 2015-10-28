@@ -57,7 +57,7 @@ http://localhost:3000/
 
 ###Creating routes
 - [ ] Create a route that handles ```GET``` requests to ```/messages```
-- [ ] The route should connect to the ```messageController``` middleware (provide). Modify the getMessages function to respond with the provided array of messages
+- [ ] The route should connect to the ```messageController``` middleware (starter code located in `/server/messages/messageController.js`). Modify the getMessages function to respond with the provided array of messages
 - [ ] Create a route that handles ```POST``` requests to ````/messages```. The message will have the format.
 ````
 {
