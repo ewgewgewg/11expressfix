@@ -42,6 +42,7 @@ describe('Express', function() {
 
           request(app).post('/messages')
             .send({message: 'test', created_by: 'tester'})
+            .set('Authorization', 'Basic secret_key')
             .expect(200)
             .end(function(err,res) {
               request(app)
