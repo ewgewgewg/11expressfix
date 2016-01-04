@@ -44,7 +44,8 @@ function sendMessage() {
   }
   $.ajax({
     type: 'POST',
-    data: obj,
+    data: JSON.stringify(obj),
+    contentType: 'application/json; charset=UTF-8',
     url: './messages',
     headers: {
       'Authorization': 'Basic secret_key'
