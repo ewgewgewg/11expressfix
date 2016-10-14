@@ -1,4 +1,4 @@
-var deniedObj = require('./denied');
+const deniedObj = require('./denied');
 
 module.exports = function(request, response,next) {
 

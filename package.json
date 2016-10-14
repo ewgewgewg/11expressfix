@@ -1,5 +1,5 @@
 {
-  "name": "unit-11sb-express",
+  "name": "unit-10sb-express",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodesmithLLC/unit-11SB-express.git"
+    "url": "git+https://github.com/CodesmithLLC/unit-10SB-express.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodesmithLLC/unit-11SB-express/issues"
+    "url": "https://github.com/CodesmithLLC/unit-10SB-express/issues"
   },
-  "homepage": "https://github.com/CodesmithLLC/unit-11SB-express#readme",
+  "homepage": "https://github.com/CodesmithLLC/unit-10SB-express#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
     "chai": "^3.4.0",

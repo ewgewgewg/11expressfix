@@ -2,9 +2,9 @@
  * Do not edit
  */
 
-$(document).ready(function(e) {
+$(document).ready((e) => {
   getMessage();
-  $('#message-button').on('click', function() {
+  $('#message-button').on('click', () => {
     sendMessage();
   });
 });
@@ -18,24 +18,24 @@ function getMessage() {
       'Authorization': 'Basic secret_key'
     }
   })
-  .done(function(data) {
+  .done((data) => {
     renderMessages(data);
     setTimeout(getMessage, 2000);
   });
 }
 
 function renderMessages(messages) {
-  var $messages = $('<ol></ol>');
-  for (var i = 0; i < messages.length; i++) {
+  const $messages = $('<ol></ol>');
+  for (let i = 0; i < messages.length; i++) {
     $messages.append('<li>' +messages[i].message +'<br>' +messages[i].created_by +'</li>');
   }
   $('#message-box').append($messages);
 }
 
 function sendMessage() {
-  var message = $('#message').val();
-  var created_by = $('#created_by').val();
-  var obj = {};
+  const message = $('#message').val();
+  const created_by = $('#created_by').val();
+  const obj = {};
   if (message) {
     obj.message = message;
   }
@@ -49,7 +49,7 @@ function sendMessage() {
     url: './messages',
     headers: {
       'Authorization': 'Basic secret_key'
-  }}).then(function(data) {
+  }}).then((data) => {
     console.log(data);
   });
 

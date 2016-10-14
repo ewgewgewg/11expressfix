@@ -1,9 +1,9 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var messageController = require('./messages/messageController');
-var authController = require('./utils/authController');
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const path = require('path');
+const messageController = require('./messages/messageController');
+const authController = require('./utils/authController');
+const bodyParser = require('body-parser');
 
 app.use(express.static(path.join(__dirname, './../client')));
 
