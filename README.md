@@ -27,7 +27,7 @@ Many popular modules are developed as middleware. Popular ones include
 - And much more...
 
 ## Headers
-![inline](https://docs.trafficserver.apache.org/en/4.0.x/_images/http_header_struct.jpg)
+![inline] (https://docs.trafficserver.apache.org/en/4.0.x/_images/http_header_struct.jpg)
 Headers are information sent with every request to the server that helps the server learn more about the client. Common headers include:
 ````
 Cookie - the browser's cookie
