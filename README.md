@@ -15,7 +15,7 @@ Express is a framework built on top of the Nodejs platform that enables develope
 ## Middleware
 Middleware are functions that intercept the client's request, modifies or verifies it, then responds the client or passes it the following middleware.
 
-![inline](http://media.developeriq.in/images/nodeexpress_2_9_2015_1.png)
+![inline] (http://media.developeriq.in/images/nodeexpress_2_9_2015_1.png)
 
 Having this modular approach makes it easy to break down the server's responsibilities to specific tasks. One middleware could be responsible for processing cookies. Another could be used to authenticate the user (or otherwise redirect them).
 
