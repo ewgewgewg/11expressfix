@@ -30,7 +30,7 @@ describe('Express', () => {
       request
         .post('/messages')
         .send({message: 'test'})
-        .expect(200,done);
+        .expect(400,done);
     });
 
     it('Successful POST request adds message', (done) => {
