@@ -26,7 +26,7 @@ describe('Express', () => {
         .expect(200,done);
     });
 
-    it('POST request to /messages returns status code of 200 if message formatted incorrectly', (done) => {
+    it('POST request to /messages returns status code of 400 if message formatted incorrectly', (done) => {
       request
         .post('/messages')
         .send({message: 'test'})
@@ -65,7 +65,7 @@ describe('Express', () => {
 
           request.post('/messages')
             .send({message: 'test'})
-            .expect(200)
+            .expect(400)
             .end((err,res) => {
               request
                 .get('/messages')
