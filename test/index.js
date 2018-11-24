@@ -22,6 +22,7 @@ describe('Express', () => {
     it('POST request to /messages returns status code of 200 if message formatted correctly', (done) => {
       request
         .post('/messages')
+        .set('Authorization', 'Basic secret_key')
         .send({message: 'test', created_by: 'tester'})
         .expect(200,done);
     });
