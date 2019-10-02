@@ -1,8 +1,9 @@
 const messages = require('./../../data/messages');
 const bodyParser = require('body-parser');
+//const success = require('./data/server/messages/utils/success');
+//const error = require('./../../data/messages');
 //const inter = messages;
 //let obj = [];
-let i = 0;
 
 module.exports = {
   getMessages: (request,response) => {
@@ -12,16 +13,13 @@ module.exports = {
   },
   postMessage: (request,response) => {
     // write code here
-    //messages = messages.concat()
-    //let obj = {message : request.text.message, created_by : request.text.created_by}
-    // console.log(request.text);
-    // inter.push(request.text);
-    console.log(request.body);
-    console.log(messages);
-    messages.push(request.body);
-    //console.log("hi", JSON.parse(response.body), "ho");
-    console.log(i);
-    i++;
+    //messages.push(request.body);
+    if (typeof request.body === "object" && request.body.message && request.body.created_by){
+      messages.push(request.body);
+      response.status(200).send({success: "Your POST request was successful"});
+    } else {
+      response.status(400).send({error : "Your POST request was unsuccessful"})
+    }
 
   }
 };
